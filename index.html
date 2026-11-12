@@ -1,148 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="format-detection" content="telephone=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>易职在家 · 开通会员</title>
   <style>
-    :root {
-      --green: #1f7a4d;
-      --green-dark: #165c3a;
-      --green-soft: #e8f5ee;
-      --text: #1a1a1a;
-      --muted: #5c6670;
-      --line: #d9e6de;
-      --bg: #f7faf8;
-      --white: #ffffff;
-      --gray-box: #e6e8ea;
-      --gray-text: #6b7280;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    .page {
-      max-width: 480px;
-      margin: 0 auto;
-      min-height: 100%;
-      background: var(--white);
-      padding: 32px 24px 48px;
-    }
-    header {
-      text-align: center;
-    }
-    .avatar {
-      width: 112px;
-      height: 112px;
-      border-radius: 20px;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto 16px;
-      border: 1px solid var(--line);
-      background: var(--white);
-    }
-    h1 {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--green-dark);
-      letter-spacing: 0.04em;
-      text-align: center;
-      line-height: 1.35;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin: 28px 0 24px;
-    }
-    @media (min-width: 400px) {
-      .cards { grid-template-columns: repeat(3, 1fr); }
-    }
-    .card {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 16px 10px 14px;
-      text-align: center;
-      background: var(--green-soft);
-    }
-    .card.featured {
-      background: var(--green);
-      border-color: var(--green);
-      color: var(--white);
-    }
-    .card .name {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .card.featured .name { color: rgba(255,255,255,0.88); }
-    .card .price {
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--green-dark);
-      letter-spacing: -0.02em;
-    }
-    .card.featured .price { color: var(--white); }
-    .card .unit {
-      font-size: 12px;
-      font-weight: 500;
-    }
-    .codes {
-      display: grid;
-      gap: 12px;
-      margin: 8px 0 28px;
-    }
-    .placeholder {
-      background: var(--gray-box);
-      color: var(--gray-text);
-      border-radius: 14px;
-      min-height: 168px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 15px;
-      padding: 16px;
-    }
-    .cta {
-      text-align: center;
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--green-dark);
-    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f1f7f3; color: #173d2a; font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+    main { width: min(100% - 32px, 520px); margin: 32px auto; padding: 28px 20px; background: #fff; border: 1px solid #dce9df; border-radius: 20px; }
+    header { text-align: center; }
+    h1 { margin: 0; font-size: clamp(21px, 5.8vw, 28px); line-height: 1.5; }
+    .notice { margin: 10px 0 26px; color: #52685a; font-size: 13px; }
+    .prices { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 0; margin: 0 0 26px; list-style: none; }
+    .prices li { padding: 12px 10px; border-radius: 10px; background: #eaf5ed; font-size: 15px; font-weight: 600; }
+    .placeholders { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .placeholder { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; padding: 12px; background: #eceeed; border: 1px solid #d5dad7; border-radius: 10px; color: #525d56; text-align: center; font-size: 14px; line-height: 1.7; }
+    .action { margin: 26px 0 20px; color: #216740; font-size: 18px; font-weight: 600; text-align: center; }
+    footer { color: #52685a; font-size: 12px; line-height: 1.7; text-align: center; }
+    @media (max-width: 340px) { main { padding: 24px 14px; } .placeholders { gap: 10px; } }
   </style>
 </head>
 <body>
-  <div class="page">
+  <main>
     <header>
-      <img class="avatar" src="avatar.webp" width="112" height="112" alt="易职在家">
       <h1>易职在家 · 开通会员</h1>
+      <p class="notice">测试页，仅用于测打开速度</p>
     </header>
-    <section class="cards" aria-label="会员价格">
-      <div class="card">
-        <div class="name">月卡</div>
-        <div class="price">39.9<span class="unit"> 元</span></div>
-      </div>
-      <div class="card">
-        <div class="name">季卡</div>
-        <div class="price">99.9<span class="unit"> 元</span></div>
-      </div>
-      <div class="card featured">
-        <div class="name">半年卡</div>
-        <div class="price">179.9<span class="unit"> 元</span></div>
-      </div>
-    </section>
-    <section class="codes" aria-label="示例占位">
+    <ul class="prices" aria-label="会员价格">
+      <li>月卡 ¥39.9</li>
+      <li>季卡 ¥99.9</li>
+      <li>半年卡 ¥179.9</li>
+    </ul>
+    <section class="placeholders" aria-label="示例占位框">
       <div class="placeholder">微信二维码（示例）</div>
       <div class="placeholder">收款码（示例）</div>
     </section>
-    <p class="cta">加微信开通会员</p>
-  </div>
+    <p class="action">加微信开通会员</p>
+    <footer>本页为测试占位，收款请勿扫页上示例框</footer>
+  </main>
 </body>
 </html>
